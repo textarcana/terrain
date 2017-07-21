@@ -224,7 +224,7 @@ function makeRandomLanguage() {
     lang.vortho = choose(vorthsets, 2).orth;
     lang.minsyll = randrange(1, 3);
     if (lang.structure.length < 3) lang.minsyll++;
-    lang.maxsyll = randrange(lang.minsyll + 1, 7);
+    lang.maxsyll = randrange(lang.minsyll + 1, 5);
     lang.joiner = choose('   -');
     return lang;
 }
@@ -338,39 +338,66 @@ var vorthsets = [
     }
 ];
 
-var consets = [
-    {
+var consetsLib = {
+  "Minimal": {
         name: "Minimal",
         C: "ptkmnls"
     },
-    {
+  "English-ish": {
         name: "English-ish",
         C: "ptkbdgmnlrsʃzʒʧ"
     },
-    {
+  "Pirahã (very simple)": {
         name: "Pirahã (very simple)",
         C: "ptkmnh"
     },
-    {
+  "Hawaiian-ish": {
         name: "Hawaiian-ish",
         C: "hklmnpwʔ"
     },
-    {
+  "Greenlandic-ish": {
         name: "Greenlandic-ish",
         C: "ptkqvsgrmnŋlj"
     },
-    {
+  "Arabic-ish": {
         name: "Arabic-ish",
         C: "tksʃdbqɣxmnlrwj"
     },
-    {
+  "Arabic-lite": {
         name: "Arabic-lite",
         C: "tkdgmnsʃ"
     },
-    {
+  "English-lite": {
         name: "English-lite",
         C: "ptkbdgmnszʒʧhjw"
-    }
+    },
+  "Wastelander": {
+    name: "Wastelander",
+    C: "bcghjlmrstʧ"
+  },
+  "Wilderland Talk": {
+    name: "Wilderland Talk",
+    C: "cgjkmrsxʒ"
+  },
+  "Low Telerian": {
+    name: "Low Telerian",
+    C: "bcfgklmnpstʧ"
+  },
+  "High Telerian": {
+    name: "High Telerian",
+    C: "bcflmnprstwʧ"
+  }
+};
+
+
+  // consetsLib.Wastelander,
+  //
+//
+//  consetsLib["Low Telerian"],
+//  consetsLib["High Telerian"]
+const consets = [
+  consetsLib["Wilderland Talk"]
+
 ];
 
 var ssets = [
@@ -483,4 +510,3 @@ var ressets = [
         res: [/[sʃf][sʃ]/, /(.)\1/, /[rl][rl]/]
     }
 ];
-

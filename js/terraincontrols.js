@@ -1,8 +1,8 @@
 function addSVG(div) {
     return div.insert("svg", ":first-child")
-        .attr("height", 400)
-        .attr("width", 400)
-        .attr("viewBox", "-500 -500 1000 1000");
+        .attr("height", 800)
+        .attr("width", 800)
+        .attr("viewBox", "-500 -500 2000 2000");
 }
 var meshDiv = d3.select("div#mesh");
 var meshSVG = addSVG(meshDiv);

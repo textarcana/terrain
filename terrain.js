@@ -31,9 +31,12 @@ function randomVector(scale) {
     return [scale * rnorm(), scale * rnorm()];
 }
 
+// const zoomFactor = 1.2;
+const zoomFactor = 0.5;
+
 var defaultExtent = {
-    width: 1,
-    height: 1
+  width: 1 * Number(zoomFactor),
+  height: 1 * Number(zoomFactor)
 };
 
 function generatePoints(n, extent) {
@@ -334,7 +337,7 @@ function fillSinks(h, epsilon) {
 function getFlux(h) {
     var dh = downhill(h);
     var idxs = [];
-    var flux = zero(h.mesh); 
+    var flux = zero(h.mesh);
     for (var i = 0; i < h.length; i++) {
         idxs[i] = i;
         flux[i] = 1/h.length;
@@ -424,7 +427,7 @@ function cleanCoast(h, iters) {
                 if (h[nbs[j]] > 0) {
                     count++;
                 } else if (h[nbs[j]] > best) {
-                    best = h[nbs[j]];    
+                    best = h[nbs[j]];
                 }
             }
             if (count > 1) continue;
@@ -698,7 +701,7 @@ function visualizeVoronoi(svg, field, lo, hi) {
     tris.enter()
         .append('path')
         .classed('field', true);
-    
+
     tris.exit()
         .remove();
 
@@ -808,7 +811,7 @@ function visualizeCities(svg, render) {
 }
 
 function dropEdge(h, p) {
-    p = p || 4
+    p = p || 4;
     var newh = zero(h.mesh);
     for (var i = 0; i < h.length; i++) {
         var v = h.mesh.vxs[i];
@@ -976,7 +979,7 @@ function drawLabels(svg, render) {
             if (terr[j] != city) score -= 3000;
             for (var k = 0; k < cities.length; k++) {
                 var u = h.mesh.vxs[cities[k]];
-                if (Math.abs(v[0] - u[0]) < sx && 
+                if (Math.abs(v[0] - u[0]) < sx &&
                     Math.abs(v[1] - sy/2 - u[1]) < sy) {
                     score -= k < nterrs ? 4000 : 500;
                 }
@@ -1007,10 +1010,10 @@ function drawLabels(svg, render) {
             }
         }
         reglabels.push({
-            text: text, 
-            x: h.mesh.vxs[best][0], 
-            y: h.mesh.vxs[best][1], 
-            size:sy, 
+            text: text,
+            x: h.mesh.vxs[best][0],
+            y: h.mesh.vxs[best][1],
+            size:sy,
             width:sx
         });
     }
@@ -1048,9 +1051,9 @@ function doMap(svg, params) {
     };
     var width = svg.attr('width');
     svg.attr('height', width * params.extent.height / params.extent.width);
-    svg.attr('viewBox', -1000 * params.extent.width/2 + ' ' + 
-                        -1000 * params.extent.height/2 + ' ' + 
-                        1000 * params.extent.width + ' ' + 
+    svg.attr('viewBox', -1000 * params.extent.width/2 + ' ' +
+                        -1000 * params.extent.height/2 + ' ' +
+                        1000 * params.extent.width + ' ' +
                         1000 * params.extent.height);
     svg.selectAll().remove();
     render.h = params.generator(params);
@@ -1058,16 +1061,18 @@ function doMap(svg, params) {
     drawMap(svg, render);
 }
 
+const citiesCount = Math.random() * 10 * 2;
+const territories = citiesCount * Math.random();
+
 var defaultParams = {
     extent: defaultExtent,
     generator: generateCoast,
-    npts: 16384,
-    ncities: 15,
-    nterrs: 5,
+    npts: 16384 * Number(zoomFactor),
+    ncities: citiesCount,
+    nterrs: territories,
     fontsizes: {
-        region: 40,
-        city: 25,
+        region: 36,
+        city: 28,
         town: 20
     }
-}
-
+};
