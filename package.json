@@ -1,0 +1,29 @@
+{
+  "name": "terrain",
+  "version": "1.0.0",
+  "description": "A fork of https://github.com/mewo2/terrain",
+  "main": "index.html",
+  "dependencies": {
+    "http-server": "^0.10.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/textarcana/terrain.git"
+  },
+  "keywords": [
+    "fantasy",
+    "maps",
+    "bot",
+    "generator"
+  ],
+  "author": "Martin O'Leary",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/textarcana/terrain/issues"
+  },
+  "homepage": "https://github.com/textarcana/terrain#readme"
+}

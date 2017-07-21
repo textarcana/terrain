@@ -62,7 +62,7 @@ primDraw();
 primDiv.append("button")
     .text("Reset to flat")
     .on("click", function () {
-        primH = zero(primH.mesh); 
+        primH = zero(primH.mesh);
         primDraw();
     });
 
@@ -347,4 +347,3 @@ finalDiv.append("button")
     .on("click", function () {
         doMap(finalSVG, defaultParams);
     });
-
