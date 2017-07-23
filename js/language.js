@@ -373,7 +373,7 @@ var consetsLib = {
     },
   "Wastelander": {
     name: "Wastelander",
-    C: "bcghjlmrstʧ"
+    C: "bhjlnrt"
   },
   "Wilderland Talk": {
     name: "Wilderland Talk",
@@ -392,12 +392,11 @@ var consetsLib = {
 
   // consetsLib.Wastelander,
   //
-//
+//  consetsLib["Wilderland Talk"]
 //  consetsLib["Low Telerian"],
 //  consetsLib["High Telerian"]
 const consets = [
-  consetsLib["Wilderland Talk"]
-
+  consetsLib.Wastelander
 ];
 
 var ssets = [

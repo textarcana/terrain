@@ -31,8 +31,7 @@ function randomVector(scale) {
     return [scale * rnorm(), scale * rnorm()];
 }
 
-// const zoomFactor = 1.2;
-const zoomFactor = 0.5;
+const zoomFactor = 1.4;
 
 var defaultExtent = {
   width: 1 * Number(zoomFactor),
@@ -1062,7 +1061,7 @@ function doMap(svg, params) {
 }
 
 const citiesCount = Math.random() * 10 * 2;
-const territories = citiesCount * Math.random();
+const territories = citiesCount % 4 + 1;
 
 var defaultParams = {
     extent: defaultExtent,
@@ -1072,7 +1071,7 @@ var defaultParams = {
     nterrs: territories,
     fontsizes: {
         region: 36,
-        city: 28,
+        city: 20,
         town: 20
     }
 };
