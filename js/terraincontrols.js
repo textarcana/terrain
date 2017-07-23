@@ -355,3 +355,6 @@ bigGeneratorDiv.append("button")
     .on("click", function () {
         doMap(bigGeneratorSVG, defaultParams);
     });
+
+
+doMap(bigGeneratorSVG, defaultParams);
