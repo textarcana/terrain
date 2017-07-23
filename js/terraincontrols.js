@@ -347,3 +347,11 @@ finalDiv.append("button")
     .on("click", function () {
         doMap(finalSVG, defaultParams);
     });
+
+const bigGeneratorDiv = d3.select("div#bigGenerator");
+const bigGeneratorSVG = addSVG(bigGeneratorDiv);
+bigGeneratorDiv.append("button")
+    .text("Generate high resolution map")
+    .on("click", function () {
+        doMap(bigGeneratorSVG, defaultParams);
+    });

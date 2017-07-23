@@ -1,117 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+  <head>
+    <title>Generating fantasy maps</title>
 
-        <meta charset="UTF-8">
-        <meta content="text/html; charset=UTF-8" name="Content-Type">
-        <meta name="twitter:card" content="summary">
-        <meta name="twitter:site" content="@mewo2">
-        <meta name="twitter:title" content="Generating fantasy maps">
-        <meta name="twitter:description" content="An interactive exploration of the map generation algorithm behind
-@unchartedatlas.
-">
-        <meta name="twitter:image" content="https://mewo2.com/deserts/map.png">
+    <meta content="text/html; charset=UTF-8" name="Content-Type">
 
-        <link rel="stylesheet" href="/style.css" />
-        <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
-        <title>
-Generating fantasy maps
-</title>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
 
-    </head>
-    <body>
-        <div id="content">
-<div class="splash">
-    <h1>Generating fantasy maps</h1>
-</div>
-<div class="note">
-    <script src="/js/d3.v4.js"></script>
+    <link type="text/css" rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <script type="text/javascript" src="/js/d3.v4.js"></script>
 
-<script src="/js/priority-queue.js"></script>
+    <script  type="text/javascript" src="/js/priority-queue.js"></script>
 
-<style>
-    path, line {
-        fill: none;
-        stroke: black;
-        stroke-linecap: round;
-    }
+    <div id="content">
+      <div class="splash">
+        <h1>Generating fantasy maps</h1>
+      </div>
+      <div class="note">
 
-    .field {
-        stroke: none;
-        fill-opacity: 1.0;
-    }
+        <script  type="text/javascript" src="/js/language.js"></script>
 
-    .slope {
-        stroke-width: 1;
-    }
+        <script  type="text/javascript" src="terrain.js"></script>
 
-    .river {
-        stroke-width: 2;
-    }
+        <h3>Map Generator</h3>
+        <div class="example" id="bigGenerator">
 
-    .coast {
-        stroke-width: 4;
-    }
-
-    .border {
-        stroke-width: 5;
-        stroke-dasharray: 4,4;
-        stroke-linecap: butt;
-    }
-
-    text {
-        font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-        color: black;
-        stroke: white;
-        stroke-width: 5;
-        stroke-linejoin: round;
-        paint-order: stroke;
-    }
-
-    text.region {
-        stroke-width:10;
-        font-variant: small-caps;
-    }
-
-    svg {
-        float: right;
-        background-color: white;
-    }
-</style>
-
-<script src="/js/language.js"></script>
-
-<script src="terrain.js"></script>
-
-<h3>Grids</h3>
-
-<div class="example" id="mesh">
-<p>Note: this shows 256 (2<sup>8</sup>) points, to make viewing easier, but the real generator uses 16,384 (2<sup>14</sup>) points. I have a programmer's superstitions about always using powers of 2, which are more pleasing to the spirit of the machine.</p>
-</div>
-
-<h3>Rough outlines</h3>
-<div class="example" id="prim">
-<p>Note: the black line indicates the zero contour, which we treat as 'sea level'. Also, this map uses 4,096 (2<sup>12</sup>) points, for speed.</p>
-</div>
-
-<h3>Erosion</h3>
-<div class="example" id="erode">
-</div>
-
-<h3>Rendering terrain</h3>
-<div class="example" id="phys">
-</div>
-
-<h3>Cities, borders</h3>
-<div class="example" id="city">
-
-</div>
-
-<h3>Placing labels</h3>
-<div class="example" id="final">
-
-<script src="/js/terraincontrols.js"></script>
-</div>
-</div>
-    </body>
+          <script type="text/javascript" src="/js/terraincontrols.js"></script>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
