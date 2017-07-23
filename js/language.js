@@ -386,17 +386,19 @@ var consetsLib = {
   "High Telerian": {
     name: "High Telerian",
     C: "bcflmnprstwʧ"
+  },
+  "cat": {
+    name: "cat",
+    C: "myŋ"
   }
 };
 
-
-  // consetsLib.Wastelander,
-  //
-//  consetsLib["Wilderland Talk"]
-//  consetsLib["Low Telerian"],
-//  consetsLib["High Telerian"]
 const consets = [
-  consetsLib.Wastelander
+  consetsLib.Wastelander,
+  consetsLib["Wilderland Talk"],
+  consetsLib["Low Telerian"],
+  consetsLib["High Telerian"],
+  consetsLib.cat
 ];
 
 var ssets = [
